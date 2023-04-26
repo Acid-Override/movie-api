@@ -19,6 +19,7 @@ public class MovieController {
     @Autowired
     private MovieService movieService;
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping
     public ResponseEntity<List<MovieModel>> getMovies() {
         return new ResponseEntity<>(movieService.getAllMovies(), HttpStatus.OK);
